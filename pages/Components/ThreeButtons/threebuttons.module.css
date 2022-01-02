@@ -1,0 +1,16 @@
+.buttonsbg{
+     background-color: #012a35;
+}
+.mybutton{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color : aliceblue;
+    background: #11998e;
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 1.563rem;
+}
+.mybutton:hover{
+    background: #38ef7d;
+    transform: translate(0px,-5px);
+    transition: 0.5s;
+}
