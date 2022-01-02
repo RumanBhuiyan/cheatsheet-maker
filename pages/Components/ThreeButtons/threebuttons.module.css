@@ -8,6 +8,7 @@
     width: 9rem;
     height: 2.5rem;
     border-radius: 1.563rem;
+    box-shadow: 0 0 10px;
 }
 .mybutton:hover{
     background: #38ef7d;
