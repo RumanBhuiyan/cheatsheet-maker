@@ -1,4 +1,10 @@
 .logo{
-    height: 150px;
+    height: 9.375 rem;
     background-color: #012a35;
+}
+.title{
+    background-color: #012a35;
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #38ef7d;
 }
