@@ -14,9 +14,9 @@ function Dropdown() {
 
     const getEditor = (type) => {
         if (type == 'first'){
-            setEditorType ('Write Note')
+            setEditorType ('Write Your Note')
         }else if (type == 'second'){
-            setEditorType('Write Code')
+            setEditorType('Write Your Code')
         }else {
             setEditorType('')
         }
@@ -44,10 +44,10 @@ function Dropdown() {
                 Write Code</div>
         </div>
         {
-            editorType === 'Write Note' && <TextEditor />
+            editorType === 'Write Your Note' && <TextEditor text={editorType} />
         }
         {
-            editorType === 'Write Code' && <CodeEditor />
+            editorType === 'Write Your Code' && <CodeEditor text={editorType} />
         }
         </>
     )

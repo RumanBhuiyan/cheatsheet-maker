@@ -31,3 +31,7 @@
 .third:hover{
     background-color: #ff5e62 ;
 }
+
+.texteditor,.codeeditor{
+    margin-top: 20px;
+}
