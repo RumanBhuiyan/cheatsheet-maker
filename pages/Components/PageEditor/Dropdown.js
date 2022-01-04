@@ -1,24 +1,25 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
 import Styles from './index.module.css'
 import Head from 'next/head'
 import TextEditor from './TextEditor'
 import CodeEditor from './CodeEditor'
+import {TextContext} from '../../index'
 
 function Dropdown() {
     const [display , setDisplay ] = useState('hidden')
-    const [editorType , setEditorType] = useState('')
+    const {editorType , setEditorType} = useContext(TextContext)
 
     const toggleDropdown = () => {
-        setDisplay(display => display === 'hidden' ? 'block' : 'hidden')
+         setDisplay(display => display === 'hidden' ? 'block' : 'hidden')
     }
 
-    const getEditor = (type) => {
+    const getEditor = async (type) => {
         if (type == 'first'){
-            setEditorType ('Write Your Note')
+           await setEditorType ('Write Your Note')
         }else if (type == 'second'){
-            setEditorType('Write Your Code')
+           await setEditorType('Write Your Code')
         }else {
-            setEditorType('')
+           await setEditorType('')
         }
         toggleDropdown()
     }

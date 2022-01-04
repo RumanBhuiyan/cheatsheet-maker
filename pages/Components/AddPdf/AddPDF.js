@@ -5,17 +5,30 @@ import {TextContext} from '../../index'
 
 function AddPDF() {
    
-    const {setTextNotes,textareaValue,setTextAreaValue} = useContext(TextContext)
+    const {editorType,setTextNotes,textareaValue,setTextAreaValue,codeareaValue,setCodeAreaValue,setCodeNotes} = useContext(TextContext)
 
     const addNode = async () => {
-        if(textareaValue.length){
-            await setTextNotes(nodes => [
-                ...nodes,
-                { id : nodes.length + 1,
-                 content : textareaValue }
-            ])
-            setTextAreaValue('')
-        }
+        if (editorType == 'Write Your Note'){
+            if(textareaValue.length){
+                await setTextNotes(nodes => [
+                    ...nodes,
+                    { id : nodes.length + 1,
+                     content : textareaValue }
+                ])
+               await setTextAreaValue('')
+            }
+        }else if (editorType == 'Write Your Code'){
+           if(codeareaValue.length){
+               await setCodeNotes(codes => [
+                   ...codes,
+                   {
+                       id : codes.length + 1,
+                       code : `<pre>${codeareaValue}</pre>`
+                   }
+               ])
+              await setCodeAreaValue('')
+           } 
+        }else return
     }
 
     return (

@@ -10,20 +10,23 @@ export const TextContext = React.createContext()
 
 export default function Home() {
 
-  const [textNotes , setTextNotes] = useState([])
+  const [editorType , setEditorType] = useState('')
   const [titles , setTitles] = useState([])
+  const [textNotes , setTextNotes] = useState([])
+  const [codeNotes , setCodeNotes] = useState([])
   const [textareaValue , setTextAreaValue] = useState('')
+  const [codeareaValue , setCodeAreaValue] = useState('')
 
   // useEffect(()=>{
-  //   console.log(titles)
-  // },[titles])
+  //   console.log(codeNotes)
+  // },[codeNotes])
 
   return (
     <div>
      <Logo />
      <PageImage />
      <ThreeButtons />
-     <TextContext.Provider value={{textNotes,setTextNotes,textareaValue , setTextAreaValue,titles,setTitles}}>
+     <TextContext.Provider value={{editorType , setEditorType,textNotes,setTextNotes,textareaValue , setTextAreaValue,titles,setTitles,codeNotes , setCodeNotes,codeareaValue , setCodeAreaValue}}>
        <Title />
      {/* <div id="target" className={`flex flex-col`}>
         {

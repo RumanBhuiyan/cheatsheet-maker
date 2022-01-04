@@ -5,8 +5,8 @@ import { TextContext  } from '../../index'
 function TextEditor({text}) {
     const {textareaValue,setTextAreaValue} = useContext(TextContext)
 
-    const setValue = (event) => {
-        setTextAreaValue(event.target.value)
+    const setValue = async (event) => {
+       await setTextAreaValue(event.target.value)
     }
 
     return (
