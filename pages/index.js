@@ -18,8 +18,10 @@ export default function Home() {
   const [codeareaValue , setCodeAreaValue] = useState('')
 
   // useEffect(()=>{
+  //   console.log(titles)
+  //   console.log(textNotes)
   //   console.log(codeNotes)
-  // },[codeNotes])
+  // },[titles,textNotes,codeNotes])
 
   return (
     <div>
