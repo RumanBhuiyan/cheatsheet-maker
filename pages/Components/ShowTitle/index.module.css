@@ -1,0 +1,23 @@
+.headerbg{
+    padding-top: 10px;
+    background-color: #012a35;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    height: 50px;
+    text-align: center;
+}
+.spane{
+    background-color: #FFAFBD;
+    border-radius: 4px;
+}
+.number{
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 100%;
+    width: 1.875rem;
+}
+.title{
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 10px;
+}
