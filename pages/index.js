@@ -3,33 +3,36 @@ import PageImage from './Components/PageImage'
 import ThreeButtons from './Components/ThreeButtons'
 import AddPdf from './Components/AddPdf/AddPDF'
 import PageEditor from './Components/PageEditor'
+import Title from './Components/Title/Title'
 import React, { useEffect, useState } from "react";
-import globalStyles from '../styles/Home.module.css'
 
 export const TextContext = React.createContext()
 
 export default function Home() {
 
   const [textNotes , setTextNotes] = useState([])
+  const [titles , setTitles] = useState([])
   const [textareaValue , setTextAreaValue] = useState('')
 
-  useEffect(()=>{
-    console.log(textNotes)
-  },[textNotes])
+  // useEffect(()=>{
+  //   console.log(titles)
+  // },[titles])
 
   return (
     <div>
      <Logo />
      <PageImage />
      <ThreeButtons />
-     <div id="target" className={`flex flex-col`}>
+     <TextContext.Provider value={{textNotes,setTextNotes,textareaValue , setTextAreaValue,titles,setTitles}}>
+       <Title />
+     {/* <div id="target" className={`flex flex-col`}>
         {
           textNotes.map(node => { 
             return <div className={`${globalStyles.homeeditor} mt-2 text-center`} key={node.id}>{node.content}</div>
           })
         }
-     </div>
-      <TextContext.Provider value={{textNotes,setTextNotes,textareaValue , setTextAreaValue}}>
+     </div> */}
+     
           <PageEditor />
           <AddPdf />
       </TextContext.Provider>
